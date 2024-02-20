@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../engleski/prirodni_eng.css">
+    <script src="../Auth/logout.js" defer></script>
+    <title>Natural numbers</title>
+</head>
+
+<body>
+    <div class="global-div">
+        <!-- ovo je navigacija -->
+        <header class="header">
+            <nav>
+              <div class="logo">
+                  <a href="../engleski/index_eng.html"><img style="width: 80px; border-radius: 50%;" src="../images/logo.png" alt="logo"></a>
+              </div>
+              <input type="checkbox" id="menu-toggle">
+              <label for="menu-toggle" class="menu-icon">&#9776;</label>
+              <ul class="menu">
+                <li><a href="../engleski/index_eng.html"><i class="ri-home-2-line"></i>Home</a></li>
+                <li><a id="brojevi-link" href="../engleski/druga_eng.html"> <i class="ri-information-line"></i>Number theory</a></li>
+                <li>
+                  <a id="slucajni-link" href="../engleski/api_eng.html"> <i class="ri-information-line"></i>Random events</a>
+                </li>
+                <li><a href="../engleski/kontakt_eng.html"><i class="ri-contacts-line"></i> Contact</a></li>
+                <li><a id="ulogovan-User" href="../engleski/login_eng.html"><i class="ri-login-box-line"></i>Login</a></li>
+                <li><a href="../engleski/index_eng.html" id="logout-btn" onclick="logout()"><i class="ri-logout-box-r-line"></i> Log out</a></li>
+              </ul>
+          </nav>
+          </header>
+
+        <!-- ovo je sekcija -->
+        <div class="section">
+            <h1 style="color: #fff;">Natural numbers are a set of numbers used for counting and are denoted by the symbol ℕ. This set includes non-negative integer values, starting from 1. Therefore, natural numbers are: 1, 2, 3, 4, 5, ... Some basic concepts related to natural numbers are:
+
+                1. Smallest natural number: 1 is the smallest natural number.
+                2. Adjacent natural numbers: Numbers following 1 are 2, 3, 4, etc. Each natural number has its neighbors.
+                3. Even and odd numbers: Natural numbers can be either even or odd. Even numbers are those divisible by 2 (e.g., 2, 4, 6), while odd numbers are those not divisible by 2 (e.g., 1, 3, 5).
+                4. Number zero: Zero is not a natural number. Natural numbers start from 1.
+                5. Cardinality: The set of natural numbers is infinite, meaning there is no finite largest natural number.
+                
+                Natural numbers are fundamental in mathematics and have wide applications in everyday situations, such as counting objects, people, years, etc. They form the basis for defining other types of numbers, such as whole, rational, and real numbers.</h1>
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="my-logo">
+                <img style="width: 80px; margin-top: 1%; border-radius: 50%;" src="../images/logo.png" alt="logo">
+            </div>
+            <div class="description">
+                <p>Copyright &reg; 2024</p>
+            </div>
+            <div class="lang">
+                <a href="../engleski/prirodni_eng.html">
+                    <img style="width: 30px; height: 20px;" src="../images/eng.png" alt="eng">
+                </a>
+                <a href="../prirodni.html">
+                    <img style="width: 30px; height: 20px;" src="../images/srb.png" alt="srb">
+                </a>
+            </div>
+        </footer>
+
+    </div>
+    <script defer>
+        const logoutBtn = document.getElementById('logout-btn');
+        const ulogovan = document.getElementById('ulogovan-User');
+        const brojeviLink = document.getElementById('brojevi-link');
+        const slucajniLink = document.getElementById('slucajni-link')
+        const currentUser = localStorage.getItem('currentUser');
+        
+        if (!currentUser) {
+            logoutBtn.style.display = 'none';
+            brojeviLink.style.display = 'none';
+            slucajniLink.style.display = 'none';
+            
+        }
+        if (currentUser){
+            ulogovan.style.display = 'none';
+        }
+
+    </script>
+</body>
+
+</html>

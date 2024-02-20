@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../engleski/trece_eng.css" />
+    <script src="../Auth/logout.js"></script>
+    <title> Real numbers</title>
+  </head>
+
+  <body>
+    <div class="global-div">
+      <!-- ovo je navigacija -->
+      <header class="header">
+        <nav>
+          <div class="logo">
+              <a href="../engleski/index_eng.html"><img style="width: 80px; border-radius: 50%;" src="../images/logo.png" alt="logo"></a>
+          </div>
+          <input type="checkbox" id="menu-toggle">
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <ul class="menu">
+            <li><a href="../engleski/index_eng.html"><i class="ri-home-2-line"></i>Home</a></li>
+            <li><a id="brojevi-link" href="../engleski/druga_eng.html"> <i class="ri-information-line"></i>Number theory</a></li>
+            <li>
+              <a id="slucajni-link" href="../engleski/api_eng.html"> <i class="ri-information-line"></i>Random events</a>
+            </li>
+            <li><a href="../engleski/kontakt_eng.html"><i class="ri-contacts-line"></i> Contact</a></li>
+            <li><a id="ulogovan-User" href="../engleski/login_eng.html"><i class="ri-login-box-line"></i>Login</a></li>
+            <li><a href="../engleski/index_eng.html" id="logout-btn" onclick="logout()"><i class="ri-logout-box-r-line"></i> Log out</a></li>
+          </ul>
+      </nav>
+      </header>
+
+      <!-- ovo je sekcija -->
+      <div class="section">
+        <h1 style="color: #fff">
+          Real numbers are a key mathematical category that encompasses a wide range of values. These numbers include all rational numbers (which can be expressed in the form of a fraction) and irrational numbers (which cannot be expressed as a fraction and have an infinite, non-repeating decimal representation). Specifically, real numbers comprise all points on the real number line. Each real number has its specific place on this line. This line is often referred to as the real axis. For instance, the number 0 lies at the center, positive real numbers extend to the right, while negative real numbers extend to the left along the axis.
+          Real numbers are comprehensive and encompass various categories of numbers, including whole numbers, decimal numbers, positive and negative rational numbers, as well as irrational numbers like the square root of 2. Basic arithmetic operations (addition, subtraction, multiplication, division) are applied to real numbers, and the results of these operations are also real numbers. Real numbers are of fundamental importance in mathematics and have broad applications in everyday life, such as in physics, economics, engineering, and many other fields.
+        </h1>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="my-logo">
+            <img style="width: 80px; margin-top: 1%; border-radius: 50%;" src="../images/logo.png" alt="logo">
+        </div>
+        <div class="description">
+            <p>Copyright &reg; 2024</p>
+        </div>
+        <div class="lang">
+            <a href="../engleski/trece_eng.html">
+                <img style="width: 30px; height: 20px;" src="../images/eng.png" alt="eng">
+            </a>
+            <a href="../trece.html">
+                <img style="width: 30px; height: 20px;" src="../images/srb.png" alt="srb">
+            </a>
+        </div>
+    </footer>
+    </div>
+    <script defer>
+      const logoutBtn = document.getElementById("logout-btn");
+      const ulogovan = document.getElementById("ulogovan-User");
+      const brojeviLink = document.getElementById("brojevi-link");
+      const slucajniLink = document.getElementById("slucajni-link");
+      const currentUser = localStorage.getItem("currentUser");
+
+      if (!currentUser) {
+        logoutBtn.style.display = "none";
+        brojeviLink.style.display = "none";
+        slucajniLink.style.display = "none";
+      }
+      if (currentUser) {
+        ulogovan.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

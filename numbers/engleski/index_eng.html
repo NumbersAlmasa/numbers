@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- VAZNO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- Sve ove stranice sto postoje VAN ovog foldera "Engleski" ce zapravo biti u ovom folderu engleski ali ce im se dodati u nazivu fajla _eng. -->
+<!-- To znaci da, ako imamo index.html van foldera engleski, unutar foldera engleski ce biti index_eng.html i prva_eng.css -->
+<!-- Sve stranice koje postoje van ovog foldera "engleski" moraju postojati i u ovaj folder ali sa ovim dodatkom _eng -->
+<!-- Ovo _eng nije moranje da se stavi tako, samo smo dodali kako bi znali da je stranica na engleskom jeziku prevedena. -->
+
+<!-- Zadatak ti je sada samo da menjas nazive html i css fajlova, kod ostaje isti, samo copy-paste, i moras da prevodis na engleskom tekst gde god vidis da pise na srpski jezik -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../engleski/index_eng.css" />
+    <title>Home page</title>
+  </head>
+
+  <body>
+      <!-- ovo je navigacija(meni) -->
+      <header class="header">
+        <nav>
+          <div class="logo">
+              <a href="../engleski/index_eng.html"><img style="width: 80px; border-radius: 50%;" src="../images/logo.png" alt="logo"></a>
+          </div>
+          <input type="checkbox" id="menu-toggle">
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <ul class="menu">
+            <li><a href="../engleski/index_eng.html"><i class="ri-home-2-line"></i>Home</a></li>
+            <li><a id="brojevi-link" href="../engleski/druga_eng.html"> <i class="ri-information-line"></i>Number theory</a></li>
+            <li>
+              <a id="slucajni-link" href="../engleski/api_eng.html"> <i class="ri-information-line"></i>Random events</a>
+            </li>
+            <li><a href="../engleski/kontakt_eng.html"><i class="ri-contacts-line"></i> Contact</a></li>
+            <li><a id="ulogovan-User" href="../engleski/login_eng.html"><i class="ri-login-box-line"></i>Login</a></li>
+            <li><a href="../engleski/index_eng.html" id="logout-btn" onclick="logout()"><i class="ri-logout-box-r-line"></i> Log out</a></li>
+          </ul>
+      </nav>
+      </header>
+      <!-- Sekcija -->
+      <section>
+        <!-- Banner -->
+        <div class="banner">
+          <img class="img-banner" src="../images/numbers.jpg" alt="numbers banner">
+        </div>
+        <!-- Tekst -->
+        <h1 style="color: white; text-align: center; margin: auto; padding: 2%; font-size: 32px;">Interesting facts about numbers</h1>
+        <div class="tekst">
+        <div class="tekst1"> 
+          <h2>Numbers in human civilization</h2>
+          <p>
+            Numbers have accompanied human civilization throughout its existence. From ancient times to the modern era, numbers have been the foundation for many mathematical, scientific, and technological achievements. Numbers are fascinating and can conceal some interesting facts. For example, the number Pi (π) is a sequence of infinite decimals that never repeat, or the Fibonacci sequence that appears in nature in the form of spiral shells and flowers.
+          </p>
+        </div>
+        <div class="tekst2">
+          <h2>Numbers</h2>
+          <p>
+            Numbers are present in all aspects of our daily lives, from mathematics and finance to time and dates. Understanding and manipulating numbers are key in many professions and everyday activities.
+          </p>
+        </div>
+        </div>
+        
+        <div class="video">
+          <h1>Watch the video below</h1>
+          <video width="640" height="360" controls>
+            <source src="../video/math.mp4" type="video/mp4">
+        </video>
+        </div>
+      </section>
+
+
+      <!-- Footer -->
+      <footer>
+        <div class="my-logo">
+          <img style="width: 80px; margin-top: 1%; border-radius: 50%;" src="../images/logo.png" alt="logo">
+        </div>
+        <div class="description">
+          <p>Copyright &reg; 2024</p>
+        </div>
+        <div class="lang">
+          <a href="../engleski/index_eng.html">
+            <img
+              style="width: 30px; height: 20px"
+              src="../images/eng.png"
+              alt="eng"
+            />
+          </a>
+          <a href="../index.html">
+            <img
+              style="width: 30px; height: 20px"
+              src="../images/srb.png"
+              alt="srb"
+            />
+          </a>
+        </div>
+        <a id="scroll-to-top-btn" href="#" onclick="scrollToTop()"><i style="font-size: 22px;" class="ri-arrow-up-fill"></i></a>
+      </footer>
+    <script defer>
+      const logoutBtn = document.getElementById("logout-btn");
+      const ulogovan = document.getElementById("ulogovan-User");
+      const brojeviLink = document.getElementById("brojevi-link");
+      const slucajniLink = document.getElementById("slucajni-link");
+      const currentUser = localStorage.getItem("currentUser");
+
+      if (!currentUser) {
+        logoutBtn.style.display = "none";
+        brojeviLink.style.display = "none";
+        slucajniLink.style.display = "none";
+      }
+      if (currentUser) {
+        ulogovan.style.display = "none";
+      }
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      window.addEventListener("scroll", function () {
+        const scrollButton = document.getElementById("scroll-to-top-btn");
+        if (window.pageYOffset > 300) {
+          // Promenite ovu vrednost po potrebi
+          scrollButton.style.display = "block";
+        } else {
+          scrollButton.style.display = "none";
+        }
+      });
+    </script>
+    <script src="../Auth/logout.js" defer></script>
+  </body>
+</html>

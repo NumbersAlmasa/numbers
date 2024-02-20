@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="trece.css" />
+    <script src="./logout.js"></script>
+    <title>Realni brojevi</title>
+  </head>
+
+  <body>
+    <div class="global-div">
+      <!-- ovo je navigacija -->
+      <header class="header">
+        <nav>
+          <div class="logo">
+            <a href="index.html"
+              ><img
+                style="width: 80px; border-radius: 50%"
+                src="./images/logo.png"
+                alt="logo"
+            /></a>
+          </div>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <ul class="menu">
+            <li>
+              <a href="index.html"><i class="ri-home-2-line"></i> Početna</a>
+            </li>
+            <li>
+              <a id="brojevi-link" href="druga.html">
+                <i class="ri-information-line"></i> Teorija brojeva</a
+              >
+            </li>
+            <li>
+              <a id="slucajni-link" href="api.html">
+                <i class="ri-information-line"></i> Slučajni dogadjaji</a
+              >
+            </li>
+            <li>
+              <a href="kontakt.html"
+                ><i class="ri-contacts-line"></i> Kontakt</a
+              >
+            </li>
+            <li>
+              <a id="ulogovan-User" href="login.html"
+                ><i class="ri-login-box-line"></i> Logovanje</a
+              >
+            </li>
+            <li>
+              <a href="index.html" id="logout-btn" onclick="logout()"
+                ><i class="ri-logout-box-r-line"></i> Odjavi se</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- ovo je sekcija -->
+      <div class="section">
+        <h1 style="color: #fff">
+          Realni brojevi su ključna matematička kategorija koja obuhvata širok
+          spektar vrednosti. Ovi brojevi uključuju sve racionalne brojeve (koji
+          se mogu izraziti u obliku razlomka) i iracionalne brojeve (koji se ne
+          mogu izraziti kao razlomak i imaju beskonačan, neperiodičan decimalni
+          zapis). Egzaktno, realni brojevi obuhvataju sve tačke na realnoj
+          liniji. Svaki realan broj ima svoje određeno mesto na toj liniji. Ova
+          linija se često naziva realnom osom. Na primer, broj 0 se nalazi u
+          sredini, pozitivni realni brojevi se protežu udesno, dok se negativni
+          realni brojevi protežu ulevo duž ose. Realni brojevi su opsežni i
+          obuhvataju različite kategorije brojeva, uključujući cele brojeve,
+          decimalne brojeve, pozitivne i negativne racionalne brojeve, kao i
+          iracionalne brojeve poput korena kvadratnog broja 2. Osnovne
+          aritmetičke operacije (sabiranje, oduzimanje, množenje, deljenje)
+          primenjuju se na realne brojeve, a rezultati tih operacija takođe su
+          realni brojevi. Realni brojevi su od suštinskog značaja u matematici i
+          imaju široku primenu u svakodnevnom životu, na primer u fizici,
+          ekonomiji, inženjeringu i mnogim drugim oblastima.
+        </h1>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="my-logo">
+          <img
+            style="width: 80px; margin-top: 1%; border-radius: 50%"
+            src="./images/logo.png"
+            alt="logo"
+          />
+        </div>
+        <div class="description">
+          <p>Copyright &reg; 2024</p>
+        </div>
+        <div class="lang">
+          <a href="./engleski/trece_eng.html">
+            <img
+              style="width: 30px; height: 20px"
+              src="./images/eng.png"
+              alt="eng"
+            />
+          </a>
+          <a href="index.html">
+            <img
+              style="width: 30px; height: 20px"
+              src="./images/srb.png"
+              alt="srb"
+            />
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script defer>
+      const logoutBtn = document.getElementById("logout-btn");
+      const ulogovan = document.getElementById("ulogovan-User");
+      const brojeviLink = document.getElementById("brojevi-link");
+      const slucajniLink = document.getElementById("slucajni-link");
+      const currentUser = localStorage.getItem("currentUser");
+
+      if (!currentUser) {
+        logoutBtn.style.display = "none";
+        brojeviLink.style.display = "none";
+        slucajniLink.style.display = "none";
+      }
+      if (currentUser) {
+        ulogovan.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+/* Ovo je template za moj sajt */
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+/* ovo je telo */
+body {
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 
+    Geneva, Verdana, sans-serif;
+}
+/* ovo je osnova dokumenta */
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+/* Ovo je css za header */
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
+    background-color: #151418;
+    z-index: 9999999999999;
+    border-bottom: 3px solid white;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+  
+  nav {
+    display: flex;
+    /* Ova komanda ispod znaci da elemente unutar diva odvoji jedno od drugog, na levu i desnu stranu ukoliko ih je dva. Ako ih je tri onda prvi ja na levu stranu, drugi je u sredini a treci na kraju. */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+  }
+  
+  .logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .logo a span {
+    color: #8739fa;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 7px 15px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: 0.2s all ease-in-out;
+    color: #fff;
+  }
+  
+  .menu:hover a {
+    opacity: 0.4;
+  }
+  
+  .menu a:hover {
+    opacity: 1;
+    color: #fff;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  #menu-toggle:checked ~ .menu {
+    transform: scale(1, 1);
+  }
+  
+  @media only screen and (max-width: 950px) {
+    .menu {
+      flex-direction: column;
+      background-color: #151418;
+      align-items: start;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      transform: scale(1, 0);
+      transform-origin: top;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+  
+    .menu a {
+      margin-left: 12px;
+    }
+  
+    .menu li {
+      margin-bottom: 10px;
+    }
+  
+    .menu-icon {
+      display: block;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  }
+  
+
+/* Ovo ispod je dizajn celog sajta  */
+
+/* ovo je grupa div odnostno globalni div u kome se nalazi sve, on menja body */
+.global-div {
+    width: 100%;
+    height: 100vh;
+    background-color: #151418;
+    /* VAZNO */
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* .header {
+    background-color: blue;
+    width: 100%;
+    z-index: 9999999999999999999999999999;
+} */
+
+/* ovo je podgrupa div gde se nalaze dugmici i ostali kontent */
+.section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;                                   
+    align-items: center;
+    justify-content: center;
+    background-image: url('./images/back.jpg');
+    /* ovo je da slika bude pozadina */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+/* Naslov h1 */
+
+/* .title-text {
+    width: 100%;
+    height: auto;
+    display: flex;
+} */
+ 
+/* ovo je div u kome se nalaze dugmici */
+.div-buttons {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(21, 20, 24, 0.7);
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Izgled dugmeta */
+.div-buttons .button-design {
+    width: 200px;
+    height: 70px;
+    background-color: #5210b5;
+    color: white;
+    font-weight: bold;
+    /* razmak izmedju slova */
+    constter-spacing: 1px;
+    /* ivice da budu zaobljene */
+    border-radius: 6px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+
+/* hover koristim za prelaz kusora preko elementa, tu se nesto dogadja, ovde sam stavila boja pozadine da je ljubicasta */
+ .div-buttons .button-design:hover {
+ background-color:#8739fa  ;
+}
+
+
+
+/* Footer */
+
+footer {
+    width: 100%;
+    height: 80px;
+    color: white;
+    /* border-top: 3px solid white; */
+    background-color: #151418;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99999999;
+}
+
+/* logo u futer */
+.my-logo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding-left: 2%;
+}
+
+/* tekst u sredini */
+.description {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ikonice za jezik */
+.lang {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+    padding-right: 2%;
+}
+
+
+
+
+
+

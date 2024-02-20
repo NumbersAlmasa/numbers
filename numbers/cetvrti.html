@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cetvrti.css" />
+    <script src="./logout.js"></script>
+    <title>Celi brojevi</title>
+  </head>
+
+  <body>
+    <div class="global-div">
+      <!-- ovo je navigacija -->
+      <header class="header">
+        <nav>
+          <div class="logo">
+            <a href="index.html"
+              ><img
+                style="width: 80px; border-radius: 50%"
+                src="./images/logo.png"
+                alt="logo"
+            /></a>
+          </div>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <ul class="menu">
+            <li>
+              <a href="index.html"><i class="ri-home-2-line"></i> Početna</a>
+            </li>
+            <li>
+              <a id="brojevi-link" href="druga.html">
+                <i class="ri-information-line"></i> Teorija brojeva</a
+              >
+            </li>
+            <li>
+              <a id="slucajni-link" href="api.html">
+                <i class="ri-information-line"></i> Slučajni dogadjaji</a
+              >
+            </li>
+            <li>
+              <a href="kontakt.html"
+                ><i class="ri-contacts-line"></i> Kontakt</a
+              >
+            </li>
+            <li>
+              <a id="ulogovan-User" href="login.html"
+                ><i class="ri-login-box-line"></i> Logovanje</a
+              >
+            </li>
+            <li>
+              <a href="index.html" id="logout-btn" onclick="logout()"
+                ><i class="ri-logout-box-r-line"></i> Odjavi se</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- ovo je sekcija -->
+      <div class="section">
+        <h1 style="color: #fff">
+          Celi brojevi su skup brojeva koji uključuje prirodne brojeve, njihove
+          negacije (suprotnosti) i nulu. Oznaka za skup celih brojeva je Z.
+          Dakle, skup celih brojeva obuhvata sve brojeve koji se nalaze na
+          realnoj osi, kako sa desne strane od nule (pozitivni prirodni
+          brojevi), tako i sa leve strane od nule (negativni prirodni brojevi).
+          Skup celih brojeva uključuje: 1. Pozitivne prirodne brojeve: 1, 2, 3,
+          4, ... 2. Negativne prirodne brojeve: -1, -2, -3, -4, ... 3. Nulu: 0.
+          Ovaj skup brojeva se koristi za opisivanje položaja na realnoj liniji,
+          gde se pozitivni brojevi nalaze s desne strane nule, a negativni s
+          leve strane. Na primer: ... -3, -2, -1, 0, 1, 2, 3, ... Celi brojevi
+          se često koriste u matematičkim operacijama i problemima koji
+          uključuju suprotnosti i relativne vrednosti. Aritmetičke operacije
+          (sabiranje, oduzimanje, množenje, deljenje) između celih brojeva daju
+          rezultat koji takođe pripada skupu celih brojeva. Celi brojevi su
+          osnova za definisanje drugih vrsta brojeva, kao što su racionalni i
+          realni brojevi. Ova klasa brojeva ima široku primenu u raznim
+          matematičkim i svakodnevnim situacijama.
+        </h1>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="my-logo">
+          <img
+            style="width: 80px; margin-top: 1%; border-radius: 50%"
+            src="./images/logo.png"
+            alt="logo"
+          />
+        </div>
+        <div class="description">
+          <p>Copyright &reg; 2024</p>
+        </div>
+        <div class="lang">
+          <a href="./engleski/cetvrti_eng.html">
+            <img
+              style="width: 30px; height: 20px"
+              src="./images/eng.png"
+              alt="eng"
+            />
+          </a>
+          <a href="cetvrti.html">
+            <img
+              style="width: 30px; height: 20px"
+              src="./images/srb.png"
+              alt="srb"
+            />
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script defer>
+      const logoutBtn = document.getElementById("logout-btn");
+      const ulogovan = document.getElementById("ulogovan-User");
+      const brojeviLink = document.getElementById("brojevi-link");
+      const slucajniLink = document.getElementById("slucajni-link");
+      const currentUser = localStorage.getItem("currentUser");
+
+      if (!currentUser) {
+        logoutBtn.style.display = "none";
+        brojeviLink.style.display = "none";
+        slucajniLink.style.display = "none";
+      }
+      if (currentUser) {
+        ulogovan.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

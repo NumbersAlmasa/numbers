@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../engleski/prosti_eng.css">
+    <script src="../Auth/logout.js" defer></script>
+    <title>Prime numbers</title>
+</head>
+
+<body>
+    <div class="global-div">
+        <!-- ovo je navigacija -->
+        <header class="header">
+            <nav>
+              <div class="logo">
+                  <a href="../engleski/index_eng.html"><img style="width: 80px; border-radius: 50%;" src="../images/logo.png" alt="logo"></a>
+              </div>
+              <input type="checkbox" id="menu-toggle">
+              <label for="menu-toggle" class="menu-icon">&#9776;</label>
+              <ul class="menu">
+                <li><a href="../engleski/index_eng.html"><i class="ri-home-2-line"></i>Home</a></li>
+
+                <li><a id="brojevi-link" href="../engleski/druga_eng.html"> <i class="ri-information-line"></i>Number theory</a></li>
+                <li>
+
+                  <a id="slucajni-link" href="../engleski/api_eng.html"> <i class="ri-information-line"></i>Random events</a>
+                </li>
+
+                <li><a href="../engleski/kontakt_eng.html"><i class="ri-contacts-line"></i> Contact</a></li>
+
+                <li><a id="ulogovan-User" href="../engleski/login_eng.html"><i class="ri-login-box-line"></i>Login</a></li>
+
+                <li><a href="../engleski/index_eng.html" id="logout-btn" onclick="logout()"><i class="ri-logout-box-r-line"></i> Log out</a></li>
+              </ul>
+          </nav>
+          </header>
+
+        <!-- ovo je sekcija -->
+        <div class="section">
+            <h1 style="color: #fff;">Prime numbers are fundamental elements in number theory. They are natural numbers greater than 1 that have exactly two positive divisors: 1 and themselves. In other words, prime numbers are numbers that are divisible only by 1 and themselves, making them indivisible except by themselves and unity. For example, 2, 3, 5, 7, 11 are prime numbers, as there are no other natural numbers that divide them without remainder.
+
+                Prime numbers play a crucial role in the factorization of numbers, the process of breaking down a number into its prime factors. This characteristic of prime numbers is utilized in various mathematical algorithms, including encryption algorithms such as the RSA algorithm in cryptography.
+                
+                Interestingly, despite there being infinitely many prime numbers, their distribution is not entirely random. There are numerous theorems and hypotheses that address the distribution of prime numbers, such as the Riemann hypothesis and the Goldbach conjecture.
+                
+                Prime numbers often pose a challenge in mathematics, and the exploration of their properties and distribution remains an active area of research in mathematics.</h1>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="my-logo">
+                <img style="width: 80px; margin-top: 1%; border-radius: 50%;" src="../images/logo.png" alt="logo">
+            </div>
+            <div class="description">
+                <p>Copyright &reg; 2024</p>
+            </div>
+            <div class="lang">
+                <a href="../engleski/prosti_eng.html">
+                    <img style="width: 30px; height: 20px;" src="../images/eng.png" alt="eng">
+                </a>
+                <a href="../prosti.html">
+                    <img style="width: 30px; height: 20px;" src="../images/srb.png" alt="srb">
+                </a>
+            </div>
+        </footer>
+
+    </div>
+    <script defer>
+        const logoutBtn = document.getElementById('logout-btn');
+        const ulogovan = document.getElementById('ulogovan-User');
+        const brojeviLink = document.getElementById('brojevi-link');
+        const slucajniLink = document.getElementById('slucajni-link')
+        const currentUser = localStorage.getItem('currentUser');
+        
+        if (!currentUser) {
+            logoutBtn.style.display = 'none';
+            brojeviLink.style.display = 'none';
+            slucajniLink.style.display = 'none';
+            
+        }
+        if (currentUser){
+            ulogovan.style.display = 'none';
+        }
+
+    </script>
+</body>
+
+</html>

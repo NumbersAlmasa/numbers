@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../engleski/kontakt_eng.css">
+  <!-- adresa za api -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer>
+  </script>
+  <script src="../Auth/kontakt_eng.js" defer></script>
+  <script src="../Auth/logout.js" defer></script>
+  <title>Contact</title>
+</head>
+
+<body>
+  <div class="global-div">
+    <!-- ovo je navigacija(meni) -->
+    <header class="header">
+      <nav>
+        <div class="logo">
+          <a href="../engleski/index_eng.html"><img style="width: 80px; border-radius: 50%;" src="../images/logo.png"
+              alt="logo"></a>
+        </div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="menu">
+          <li><a href="../engleski/index_eng.html"><i class="ri-home-2-line"></i>Home</a></li>
+          <li><a id="brojevi-link" href="../engleski/druga_eng.html"> <i class="ri-information-line"></i>Number theory</a></li>
+          <li>
+            <a id="slucajni-link" href="../engleski/api_eng.html"> <i class="ri-information-line"></i>Random events</a>
+          </li>
+          <li><a href="../engleski/kontakt_eng.html"><i class="ri-contacts-line"></i> Contact</a></li>
+          <li><a id="ulogovan-User" href="../engleski/login_eng.html"><i class="ri-login-box-line"></i>Login</a></li>
+          <li><a href="../engleski/index_eng.html" id="logout-btn" onclick="logout()"><i
+                class="ri-logout-box-r-line"></i> Log out</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ovo je sekcija -->
+    <div class="section">
+      <div class="container w-75 rounded bg-light">
+        <div class="row">
+          <div class="col-md-6 p-5 bg-white text-black">
+            <h1>Information about us</h1>
+            <br />
+            <img class="avatar" src="../images/avatar.jpg" alt="Numbers creator" />
+            <div class="w-100 p-2 mt-1">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Harum quaerat in et unde reprehenderit, ad exercitationem
+                perspiciatis voluptatum aperiam, quam, vitae voluptatem
+                commodi. Omnis animi corporis incidunt pariatur veritatis
+                inventore. Iste dolores dignissimos voluptatem reiciendis
+                iusto eaque explicabo magni odio! Odit, quasi. Animi omnis,
+                minima explicabo tempore laudantium, vel ratione distinctio
+                mollitia dicta consectetur pariatur rem voluptatem nihil,
+                error hic. Id modi adipisci distinctio nemo impedit ullam
+                accusantium iure est voluptas voluptatem vel perspiciatis
+                aliquid ab delectus autem, laborum sequi omnis repellendus
+                eligendi quia.
+              </p>
+            </div>
+            <div class="contact w-100 p-2 mt-2 d-flex flex-column">
+              <!-- Ovde promeni mejl stavi tvoj -->
+              <a href="mailto:almasasemovic09@gmail.com">
+                <i class="ri-mail-line"></i> almasasemovic09@gmail.com</a>
+              <a href="tel:+38111223344">
+                <i class="ri-phone-fill"></i> +38111223344</a>
+            </div>
+          </div>
+          <div class="col-md-6 border-left p-5">
+            <h1 class="mb-5">Contact form</h1>
+            <div class="form-group">
+              <h5 for="name">Name</h5>
+              <input type="text" class="form-control" id="name" placeholder="Your name" required />
+              <span id="name-error" class="error text-danger font-weight-bold"></span>
+            </div>
+            <!-- Input za prezime -->
+            <div class="form-group">
+              <h5 for="lastname">Last name</h5>
+              <input type="text" class="form-control" id="lastname" placeholder="Your last name" required />
+              <span id="lastname-error" class="error text-danger font-weight-bold"></span>
+            </div>
+            <!-- Input za e-mail -->
+            <div class="form-group">
+              <h5 for="email">E-mail</h5>
+              <input type="email" class="form-control" id="email" placeholder="primer@gmail.com" required />
+              <span id="email-error" class="error text-danger font-weight-bold"></span>
+            </div>
+            <!-- Input za poruku -->
+            <div class="form-group">
+              <h5 for="message">Message</h5>
+              <textarea class="form-control" id="message" placeholder="Write to us..." rows="3" required></textarea>
+              <span id="message-error" class="error text-danger font-weight-bold"></span>
+            </div>
+            <!-- Dugme za slanje poruke -->
+            <button id="submitBtn" class="btn btn-primary w-100" onclick="if (validirajFormu()) sendMail();">
+              Send message
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div class="my-logo">
+        <img style="width: 80px; margin-top: 1%; border-radius: 50%;" src="../images/logo.png" alt="logo">
+      </div>
+      <div class="description">
+        <p>Copyright &reg; 2024</p>
+      </div>
+      <div class="lang">
+        <a href="../engleski/kontakt_eng.html">
+          <img style="width: 30px; height: 20px" src="../images/eng.png" alt="eng" />
+        </a>
+        <a href="../kontakt.html">
+          <img style="width: 30px; height: 20px" src="../images/srb.png" alt="srb" />
+        </a>
+      </div>
+    </footer>
+
+  </div>
+  <script defer>
+    const logoutBtn = document.getElementById('logout-btn');
+    const ulogovan = document.getElementById('ulogovan-User');
+    const brojeviLink = document.getElementById('brojevi-link');
+    const slucajniLink = document.getElementById('slucajni-link')
+    const currentUser = localStorage.getItem('currentUser');
+
+    if (!currentUser) {
+      logoutBtn.style.display = 'none';
+      brojeviLink.style.display = 'none';
+      slucajniLink.style.display = 'none';
+
+    }
+    if (currentUser) {
+      ulogovan.style.display = 'none';
+    }
+
+  </script>
+</body>
+
+</html>

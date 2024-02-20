@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="api_eng.css">
+    <script src="../api/numbersapi.js"></script>
+    <script src="../Auth/logout.js"></script>
+    <title>Api</title>
+</head>
+
+<body>
+    <div class="global-div">
+        <!-- ovo je navigacija(meni) -->
+        <header class="header">
+            <nav>
+                <div class="logo">
+                    <a href="../engleski/index_eng.html"><img style="width: 80px; border-radius: 50%;" src="../images/logo.png" alt="logo"></a>
+                </div>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
+                <ul class="menu">
+                  <li><a href="../engleski/index_eng.html"><i class="ri-home-2-line"></i>Home</a></li>
+                  <li><a id="brojevi-link" href="../engleski/druga_eng.html"> <i class="ri-information-line"></i>Number theory</a></li>
+                  <li>
+                    <a id="slucajni-link" href="../engleski/api_eng.html"> <i class="ri-information-line"></i>Random events</a>
+                  </li>
+                  <li><a href="../engleski/kontakt_eng.html"><i class="ri-contacts-line"></i> Contact</a></li>
+                  <li><a id="ulogovan-User" href="../engleski/login_eng.html"><i class="ri-login-box-line"></i>Login</a></li>
+                  <li><a href="../engleski/index_eng.html" id="logout-btn" onclick="logout()"><i class="ri-logout-box-r-line"></i> Log out</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+        <!-- ovo je sekcija -->
+        <div class="section">
+            <div class="apiContainer">
+                <button class="btn-api" onclick="fetchData('http://numbersapi.com/random/trivia', 'resultTrivia')">Random/Trivia</button>
+                <div id="resultTrivia" class="result"></div>
+            </div>
+            
+            <div class="apiContainer">
+                <button class="btn-api" onclick="fetchData('http://numbersapi.com/random/year', 'resultYear')">Random/Year</button>
+                <div id="resultYear" class="result"></div>
+            </div>
+            
+            <div class="apiContainer">
+                <button class="btn-api" onclick="fetchData('http://numbersapi.com/random/date', 'resultDate')">Random/Date</button>
+                <div id="resultDate" class="result"></div>
+            </div>
+            
+            <div class="apiContainer">
+                <button class="btn-api" onclick="fetchData('http://numbersapi.com/random/math', 'resultMath')">Random/Math</button>
+                <!-- U ovaj div ispod ti se pojavljuje resenje dinamicki -->
+                <div id="resultMath" class="result"></div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <div class="my-logo">
+              <img style="width: 80px; margin-top: 1%; border-radius: 50%;" src="../images/logo.png" alt="logo">
+            </div>
+            <div class="description">
+              <p>Copyright &reg; 2024</p>
+            </div>
+            <div class="lang">
+              <a href="../engleski/api_eng.html">
+                <img
+                  style="width: 30px; height: 20px"
+                  src="../images/eng.png"
+                  alt="eng"
+                />
+              </a>
+              <a href="../api.html">
+                <img
+                  style="width: 30px; height: 20px"
+                  src="../images/srb.png"
+                  alt="srb"
+                />
+              </a>
+            </div>
+          </footer>
+
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script defer>
+    const logoutBtn = document.getElementById('logout-btn');
+    const ulogovan = document.getElementById('ulogovan-User');
+    const brojeviLink = document.getElementById('brojevi-link');
+    const slucajniLink = document.getElementById('slucajni-link')
+    const currentUser = localStorage.getItem('currentUser');
+    
+    if (!currentUser) {
+        logoutBtn.style.display = 'none';
+        brojeviLink.style.display = 'none';
+        slucajniLink.style.display = 'none';
+        
+    }
+    if (currentUser){
+        ulogovan.style.display = 'none';
+    }
+
+</script>
+
+</html>

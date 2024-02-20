@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="prirodni.css" />
+    <script src="./logout.js"></script>
+    <title>Prirodni brojevi</title>
+  </head>
+
+  <body>
+    <div class="global-div">
+      <!-- ovo je navigacija -->
+      <header class="header">
+        <nav>
+          <div class="logo">
+            <a href="index.html"
+              ><img
+                style="width: 80px; border-radius: 50%"
+                src="./images/logo.png"
+                alt="logo"
+            /></a>
+          </div>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <ul class="menu">
+            <li>
+              <a href="index.html"><i class="ri-home-2-line"></i> Početna</a>
+            </li>
+            <li><a id="brojevi-link" href="druga.html"> 
+<i class="ri-information-line"></i> Teorija brojeva</a></li>
+            <li>
+              <a id="slucajni-link" href="api.html"> 
+<i class="ri-information-line"></i> Slučajni dogadjaji</a>
+            </li>
+            <li>
+              <a href="kontakt.html"
+                ><i class="ri-contacts-line"></i> Kontakt</a
+              >
+            </li>
+            <li>
+              <a id="ulogovan-User" href="login.html"
+                ><i class="ri-login-box-line"></i> Logovanje</a
+              >
+            </li>
+            <li>
+              <a href="index.html" id="logout-btn" onclick="logout()"
+                ><i class="ri-logout-box-r-line"></i> Odjavi se</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- ovo je sekcija -->
+      <div class="section">
+        <h1 style="color: #fff">
+          Prirodni brojevi su skup brojeva koji se koriste za brojanje i
+          označavaju se simbolom N. Ovaj skup uključuje nenegativne celobrojne
+          vrednosti, počevši od 1. Dakle, prirodni brojevi su: 1,2,3,4,5... Neki
+          osnovni pojmovi vezani za prirodne brojeve: , 1. Najmanji prirodni
+          broj: 1 je najmanji prirodni broj. 2. Susedni prirodni brojevi:
+          Brojevi iza 1 su 2, 3, 4, itd. Svaki prirodni broj ima svoje susede.
+          3. Parni i neparni brojevi: Prirodni brojevi mogu biti ili parni ili
+          neparni. Parni brojevi su oni koji su deljivi sa 2 (npr. 2, 4, 6), dok
+          su neparni brojevi oni koji nisu deljivi sa 2 (npr. 1, 3, 5). 4. Broj
+          nula: Nula nije prirodan broj. Prirodni brojevi počinju od 1. 5.
+          Kardinalnost: Skup prirodnih brojeva je beskonačan, što znači da nema
+          krajnjeg najvećeg prirodnog broja. Prirodni brojevi su osnovni u
+          matematici i imaju široku primenu u svakodnevnim situacijama, kao što
+          su brojanje predmeta, ljudi, godina, itd. Oni čine osnovu za
+          definisanje drugih vrsta brojeva, kao što su celi, racionalni, i
+          realni brojevi.
+        </h1>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="my-logo">
+          <img
+            style="width: 80px; margin-top: 1%; border-radius: 50%"
+            src="./images/logo.png"
+            alt="logo"
+          />
+        </div>
+        <div class="description">
+          <p>Copyright &reg; 2024</p>
+        </div>
+        <div class="lang">
+          <a href="./engleski/prirodni_eng.html">
+            <img
+              style="width: 30px; height: 20px"
+              src="./images/eng.png"
+              alt="eng"
+            />
+          </a>
+          <a href="prirodni.html">
+            <img
+              style="width: 30px; height: 20px"
+              src="./images/srb.png"
+              alt="srb"
+            />
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script defer>
+      const logoutBtn = document.getElementById("logout-btn");
+      const ulogovan = document.getElementById("ulogovan-User");
+      const brojeviLink = document.getElementById("brojevi-link");
+      const slucajniLink = document.getElementById("slucajni-link");
+      const currentUser = localStorage.getItem("currentUser");
+
+      if (!currentUser) {
+        logoutBtn.style.display = "none";
+        brojeviLink.style.display = "none";
+        slucajniLink.style.display = "none";
+      }
+      if (currentUser) {
+        ulogovan.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

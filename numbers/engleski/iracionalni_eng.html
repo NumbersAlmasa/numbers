@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="iracionalni_eng.css" />
+    <script src="./logout.js"></script>
+    <title>Irrational numbers</title>
+  </head>
+
+  <body>
+    <div class="global-div">
+      <!-- ovo je navigacija -->
+      <header class="header">
+        <nav>
+          <div class="logo">
+            <a href="../engleski/index_eng.html"
+              ><img
+                style="width: 80px; border-radius: 50%"
+                src="../images/logo.png"
+                alt="logo"
+            /></a>
+          </div>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <ul class="menu">
+            <li>
+              <a href="../engleski/index_eng.html"
+                ><i class="ri-home-2-line"></i>Home</a
+              >
+            </li>
+            <li>
+              <a id="brojevi-link" href="../engleski/druga_eng.html"
+                > <i class="ri-information-line"></i>Number theory</a
+              >
+            </li>
+            <li>
+              <a id="slucajni-link" href="../engleski/api_eng.html"
+                > <i class="ri-information-line"></i>Random events</a
+              >
+            </li>
+            <li>
+              <a href="../engleski/kontakt_eng.html"
+                ><i class="ri-contacts-line"></i> Contact</a
+              >
+            </li>
+            <li>
+              <a id="ulogovan-User" href="../engleski/login_eng.html"
+                ><i class="ri-login-box-line"></i>Login</a
+              >
+            </li>
+            <li>
+              <a
+                href="../engleski/index_eng.html"
+                id="logout-btn"
+                onclick="logout()"
+                ><i class="ri-logout-box-r-line"></i> Log out</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- ovo je sekcija -->
+      <div class="section">
+        <h1 style="color: #fff">
+          Irrational numbers are numbers that cannot be expressed as the quotient of two integers and do not have an exact finite or repeating decimal representation. In other words, irrational numbers are infinite decimal numbers that do not repeat in a specific pattern and do not have a clear fractional representation. Examples of irrational numbers include:
+
+          1. Square root of an imperfect square: For example, √2 is an irrational number. This means it does not have an exact fractional representation, and the decimal representation of √2 neither repeats nor terminates.
+          2. The number π (pi): This number, representing the ratio of a circle's circumference to its diameter, is also irrational. The decimal representation of π is infinite and non-repeating.
+          3. The number e: This is a mathematical constant, often known as Euler's number. The decimal representation of the number e is infinite and non-repeating.
+          
+          Irrational numbers are always non-representable as fractions and have specific characteristics regarding their decimal representation. They are located alongside rational numbers on the real number line. The set of irrational numbers, together with the set of rational numbers, forms the set of real numbers. The notation for the set of all real numbers is ℝ.
+        </h1>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="my-logo">
+          <img
+            style="width: 80px; margin-top: 1%; border-radius: 50%"
+            src="../images/logo.png"
+            alt="logo"
+          />
+        </div>
+        <div class="description">
+          <p>Copyright &reg; 2024</p>
+        </div>
+        <div class="lang">
+          <a href="../engleski/iracionalni_eng.html">
+            <img
+              style="width: 30px; height: 20px"
+              src="../images/eng.png"
+              alt="eng"
+            />
+          </a>
+          <a href="../iracionalni.html">
+            <img
+              style="width: 30px; height: 20px"
+              src="../images/srb.png"
+              alt="srb"
+            />
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script defer>
+      const logoutBtn = document.getElementById("logout-btn");
+      const ulogovan = document.getElementById("ulogovan-User");
+      const brojeviLink = document.getElementById("brojevi-link");
+      const slucajniLink = document.getElementById("slucajni-link");
+      const currentUser = localStorage.getItem("currentUser");
+
+      if (!currentUser) {
+        logoutBtn.style.display = "none";
+        brojeviLink.style.display = "none";
+        slucajniLink.style.display = "none";
+      }
+      if (currentUser) {
+        ulogovan.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

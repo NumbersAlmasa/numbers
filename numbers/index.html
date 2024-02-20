@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="prva.css" />
+    <title>Početna stranica</title>
+  </head>
+
+  <body>
+    <!-- ovo je navigacija(meni) -->
+    <header class="header">
+      <nav>
+        <div class="logo">
+          <a href="index.html"
+            ><img
+              style="width: 80px; border-radius: 50%"
+              src="./images/logo.png"
+              alt="logo"
+          /></a>
+        </div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="menu">
+          <li>
+            <a href="index.html"><i class="ri-home-2-line"></i> Početna</a>
+          </li>
+          <li>
+            <a id="brojevi-link" href="druga.html"
+              ><i class="ri-information-line"></i> Teorija brojeva</a
+            >
+          </li>
+          <li>
+            <a id="slucajni-link" href="api.html"
+              ><i class="ri-information-line"></i> Slučajni dogadjaji</a
+            >
+          </li>
+          <li>
+            <a href="kontakt.html"><i class="ri-contacts-line"></i> Kontakt</a>
+          </li>
+          <li>
+            <a id="ulogovan-User" href="login.html"
+              ><i class="ri-login-box-line"></i> Logovanje</a
+            >
+          </li>
+          <li>
+            <a href="index.html" id="logout-btn" onclick="logout()"
+              ><i class="ri-logout-box-r-line"></i> Odjavi se</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- Sekcija -->
+    <section>
+      <!-- Banner -->
+      <div class="banner">
+        <img
+          class="img-banner"
+          src="./images/numbers.jpg"
+          alt="numbers banner"
+        />
+      </div>
+      <!-- Tekst -->
+      <h1
+        style="
+          color: white;
+          text-align: center;
+          margin: auto;
+          padding: 2%;
+          font-size: 32px;
+        "
+      >
+        Zanimljivosti o brojevima
+      </h1>
+      <div class="tekst">
+        <div class="tekst1">
+          <h2>Brojevi u ljudskoj civilizaciji</h2>
+          <p>
+            Brojevi su pratili ljudsku civilizaciju tokom celog njenog
+            postojanja. Od prapostojanja do modernog doba, brojevi su bili
+            osnova za mnoge matematičke, naučne i tehnološke dostignuće. Brojevi
+            su fascinantni i mogu skrivati neke zanimljive činjenice. Na primer,
+            broj Pi (π) je niz beskonačnih decimala koje nikada ne ponavljaju,
+            ili Fibonačijev niz koji se pojavljuje u prirodi u obliku spiralnih
+            školjki i cvetova.
+          </p>
+        </div>
+        <div class="tekst2">
+          <h2>Brojevi</h2>
+          <p>
+            Brojevi su prisutni u svim aspektima našeg svakodnevnog života, od
+            matematike i finansija do vremena i datuma. Razumevanje i
+            manipulacija brojevima su ključni za mnoge profesije i svakodnevne
+            aktivnosti.
+          </p>
+        </div>
+      </div>
+
+      <div class="video">
+        <h1>Pogledajte video ispod</h1>
+        <video width="640" height="360" controls>
+          <source src="./video/math.mp4" type="video/mp4" />
+        </video>
+      </div>
+      
+      <!--Dugme koji vraca na pocetak-->
+      <a id="scroll-to-top-btn" href="#" onclick="scrollToTop()"><i style="font-size: 22px;" class="ri-arrow-up-fill"></i></a> 
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="my-logo">
+        <img
+          style="width: 80px; margin-top: 1%; border-radius: 50%"
+          src="./images/logo.png"
+          alt="logo"
+        />
+      </div>
+      <div class="description">
+        <p>Copyright &reg; 2024</p>
+      </div>
+      <div class="lang">
+        <a href="./engleski/index_eng.html">
+          <img
+            style="width: 30px; height: 20px"
+            src="./images/eng.png"
+            alt="eng"
+          />
+        </a>
+        <a href="index.html">
+          <img
+            style="width: 30px; height: 20px"
+            src="./images/srb.png"
+            alt="srb"
+          />
+        </a>
+      </div>
+    
+    
+    </footer>
+    <script defer>
+      const logoutBtn = document.getElementById("logout-btn");
+      const ulogovan = document.getElementById("ulogovan-User");
+      const brojeviLink = document.getElementById("brojevi-link");
+      const slucajniLink = document.getElementById("slucajni-link");
+      const currentUser = localStorage.getItem("currentUser");
+
+      if (!currentUser) {
+        logoutBtn.style.display = "none"; // pod nazivom logoutBtn uzmi stil njegov koji se prikazuje i promeni njegovu vidljivost, stavi je na nevidljiv.
+        brojeviLink.style.display = "none";
+        slucajniLink.style.display = "none";
+      }
+      if (currentUser) {
+        ulogovan.style.display = "none";
+      }
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      window.addEventListener("scroll", function () {
+        const scrollButton = document.getElementById("scroll-to-top-btn");
+        if (window.pageYOffset > 300) {
+          // Promenite ovu vrednost po potrebi
+          scrollButton.style.display = "block";
+        } else {
+          scrollButton.style.display = "none";
+        }
+      });
+    </script>
+    <script src="./Auth/logout.js" defer></script>
+  </body>
+</html>
